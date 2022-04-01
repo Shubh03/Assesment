@@ -1,0 +1,63 @@
+.user1 {
+     border: 5px solid ;
+  border-radius: 50%;
+  float: left;
+  height: 150px;
+  left:-5px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  width: 150px;
+  z-index: 2;
+  animation: use 10s infinite alternate;
+}
+
+@keyframes use{
+  0%{
+   
+    color: yellow;
+  }
+  20%{
+    color: purple;
+
+  }
+  40%{
+    color: green;
+  }
+  80%{
+    color: red;
+  }
+  100%{
+    color: blue;
+  }
+}
+
+
+
+
+.header-user {
+     border: 2px solid ;
+  border-radius: 50%;
+  float: left;
+  height: 50px;
+  left:-45px;
+  overflow: hidden;
+  position: absolute;
+  top: -11px;
+  width: 50px;
+  z-index: 1;
+  animation: use 5s infinite;
+}
+
+
+
+
+
+
+.avatar{
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  height: 150px;
+width: 150px;
+  z-index: 1;
+}

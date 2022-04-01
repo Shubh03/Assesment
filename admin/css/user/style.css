@@ -1,0 +1,16 @@
+.out-img{
+    border-radius: 50%;
+  border: 3px solid #ffffff;
+ 
+ 
+width: 150px; 
+height: 150px;
+
+  top: 0px;
+ left: 450px;
+  overflow: hidden;
+  position: relative;
+  
+
+  
+}

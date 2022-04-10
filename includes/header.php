@@ -19,7 +19,7 @@
         </span> -->
         <div class="header_info">
           
-         <?php
+         <!-- <?php
          $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
@@ -29,7 +29,7 @@ foreach ($results as $result) {
 $email=$result->EmailId;
 $contactno=$result->ContactNo;
 }
-?>   
+?>    -->
 
             <!-- <div class="header_widgets">
               <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
@@ -72,7 +72,7 @@ echo "Welcome To Car rental portal";
       <?php if($_SESSION['login']){?>
       <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i  aria-hidden="true"></i> 
-<?php 
+<!-- <?php 
 $email=$_SESSION['login'];
 $sql ="SELECT * FROM tblusers WHERE EmailId=:email ";
 $query= $dbh -> prepare($sql);
@@ -87,7 +87,7 @@ foreach($results as $result)
     
    
   
-   }}?>
+   }}?> -->
    
              <i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <img src="uploads/<?php echo htmlentities($result->Vimage1);?>" class="header-user"width="30" height="30" >

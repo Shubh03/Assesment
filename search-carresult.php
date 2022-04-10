@@ -128,7 +128,7 @@ foreach($results as $result)
             <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your  Car </h5>
           </div>
           <div class="sidebar_filter">
-          <form action="" method="post">
+            <form action="#" method="get">
               <div class="form-group select">
                 <select class="form-control">
                   <option>Select Brand</option>

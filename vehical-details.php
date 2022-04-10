@@ -5,45 +5,38 @@ error_reporting(0);
 if(isset($_POST['submit']))
 {
 $fromdate=$_POST['fromdate'];
-$todate=$_POST['todate'];
-$fromtime=$_POST['fromtime']; 
+$todate=$_POST['todate']; 
 $message=$_POST['message'];
 $useremail=$_SESSION['login'];
-$userId=$_SESSION['userId'];
 $status=0;
 $vhid=$_GET['vhid'];
-$BookingNumber=mt_rand(100000000, 999999999);
+$bookingno=mt_rand(100000000, 999999999);
 $ret="SELECT * FROM tblbooking where (:fromdate BETWEEN date(FromDate) and date(ToDate) || :todate BETWEEN date(FromDate) and date(ToDate) || date(FromDate) BETWEEN :fromdate and :todate) and VehicleId=:vhid";
 $query1 = $dbh -> prepare($ret);
 $query1->bindParam(':vhid',$vhid, PDO::PARAM_STR);
 $query1->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
 $query1->bindParam(':todate',$todate,PDO::PARAM_STR);
-$query1->bindParam(':BookingNumber',$BookingNumber,PDO::PARAM_STR);
 $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 
 if($query1->rowCount()==0)
 {
 
-$sql="INSERT INTO  tblbooking(BookingNumber,userEmail,VehicleId,userId,FromDate,ToDate,pickuptiming,message,Status) VALUES(:BookingNumber,:useremail,:vhid,:userId,:fromdate,:todate,:fromtime,:message,:status)";
+$sql="INSERT INTO  tblbooking(BookingNumber,userEmail,VehicleId,FromDate,ToDate,message,Status) VALUES(:bookingno,:useremail,:vhid,:fromdate,:todate,:message,:status)";
 $query = $dbh->prepare($sql);
-	$query->bindParam(':BookingNumber',$BookingNumber,PDO::PARAM_STR);
+$query->bindParam(':bookingno',$bookingno,PDO::PARAM_STR);
 $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
 $query->bindParam(':vhid',$vhid,PDO::PARAM_STR);
-$query->bindParam(':userId',$userId,PDO::PARAM_STR);
 $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
 $query->bindParam(':todate',$todate,PDO::PARAM_STR);
-
-$query->bindParam(':fromtime',$fromtime,PDO::PARAM_STR);
-
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script>alert('Booking is in progress.');</script>";
-echo "<script type='text/javascript'> document.location = 'payment.php'; </script>";
+echo "<script>alert('Booking successfull.');</script>";
+echo "<script type='text/javascript'> document.location = 'my-booking.php'; </script>";
 }
 else 
 {
@@ -96,6 +89,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 <body>
 
 <!-- Start Switcher -->
+<?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->  
 
 <!--Header-->
@@ -120,16 +114,16 @@ $_SESSION['brndid']=$result->bid;
 ?>  
 
 <section id="listing_img_slider">
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>"  alt="image" width="450" height="300"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage2);?>"  alt="image" width="450" height="300"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>"  alt="image" width="450" height="300"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>"   alt="image" width="450" height="300"></div>
+  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage2);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>" class="img-responsive"  alt="image" width="900" height="560"></div>
   <?php if($result->Vimage5=="")
 {
 
 } else {
   ?>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage5);?>" alt="image" width="450" height="300"></div>
+  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage5);?>" class="img-responsive" alt="image" width="900" height="560"></div>
   <?php } ?>
 </section>
 <!--/Listing-Image-Slider-->
@@ -144,7 +138,7 @@ $_SESSION['brndid']=$result->bid;
       </div>
       <div class="col-md-3">
         <div class="price_info">
-          <p>$ <?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+          <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
          
         </div>
       </div>
@@ -339,56 +333,34 @@ $_SESSION['brndid']=$result->bid;
         </div>
 <?php }} ?>
    
-      <!-- </div> -->
-      <div></div> 
       </div>
-      <style>
-        .m{
-          margin-top: 10px;
-          margin-left: 25px;
-        }
-      </style>
-
       
       <!--Side-Bar-->
       <aside class="col-md-3">
       
-        
+        <div class="share_vehicle">
+          <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
+        </div>
         <div class="sidebar_widget">
           <div class="widget_heading">
             <h5><i class="fa fa-envelope" aria-hidden="true"></i>Book Now</h5>
           </div>
-          <form method="post" onSubmit="return validateCarBookForm()">
+          <form method="post">
             <div class="form-group">
               <label>From Date:</label>
-              <input id="TxtFrom" class="form-control" name="fromdate" placeholder="From Date" autocomplete="off" required>
+              <input type="date" class="form-control" name="fromdate" placeholder="From Date" required>
             </div>
             <div class="form-group">
               <label>To Date:</label>
-              <input   id="TxtTo" class="form-control" name="todate" placeholder="To Date"   autocomplete="off"   required>
-              <!-- <span id="user-availability-status" style="font-size:12px;"></span>  -->
+              <input type="date" class="form-control" name="todate" placeholder="To Date" required>
             </div>
-			  
-			  
-			  
-			 
-			   <div class="form-group">
-              <label>Pick-up Timing:</label>
-              <input type="time"  id="fromtime" class="form-control" name="fromtime" placeholder="From Time" required>
-            </div>
-			  
-			   <div class="form-group">
-              <label>Return Timing:</label>
-              <input type="time" id="Drop" class="form-control" name="totime" placeholder="To Time" required>
-            </div>
-			  
             <div class="form-group">
               <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
             </div>
           <?php if($_SESSION['login'])
               {?>
               <div class="form-group">
-                <input type="submit" class="btn"  name="submit" value="Book Now"/>
+                <input type="submit" class="btn"  name="submit" value="Book Now">
               </div>
               <?php } else { ?>
 <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login For Book</a>
@@ -421,11 +393,11 @@ foreach($results as $result)
 { ?>      
         <div class="col-md-3 grid_listing">
           <div class="product-listing-m gray-bg">
-            <div class="product-listing-img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" height="150" class="responsive" alt="image" /> </a>
+            <div class="product-listing-img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" /> </a>
             </div>
             <div class="product-listing-content">
               <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h5>
-              <p class="list-price"> &#8377 <?php echo htmlentities($result->PricePerDay);?></p>
+              <p class="list-price">$<?php echo htmlentities($result->PricePerDay);?></p>
           
               <ul class="features_list">
                 
@@ -474,63 +446,5 @@ foreach($results as $result)
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/owl.carousel.min.js"></script>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script>
-$(function(){
-  $("#TxtFrom").datepicker({
-    numberOfMonths:1,
-    minDate:0,
-    // maxDate:2 ,
-    dateFormat:'yy-mm-dd',
-    onSelect:function(selectdate){
-      var dt = new Date(selectdate);
-      dt.setDate(dt.getDate()+1)
-      $("#TxtTo").datepicker("option","minDate",dt);
-    }
-  });
-
-  $("#TxtTo").datepicker({
-    numberOfMonths:1,
-    minDate:1,
-
-
-    dateFormat:'yy-mm-dd',
-    onSelect:function(selectdate){
-      var dt=new Date(selectdate);
-      dt.setDate(dt.getDate()+1)
-      $("#TxtFrom").datepicker("option","maxDate",dt);
-    }
-  });
-  
-
-});
-
-
-function validateCarBookForm(){  
-  var today = new Date();
-var fromdate= $("#TxtFrom").val();
-var fromtime=$("#fromtime").val();
-var fromdatetime=(fromdate+", "+fromtime);
-console.log(fromdatetime);
-var userdt = new Date(fromdatetime);
-  if(userdt >= today){
-    return true;
-  } else {
-    alert("Pickup time is invalid");
-    $("#fromtime").focus();
-    return false;
-  }  
-}
-
-</script>
-
-
-
-
-
-</body> 
+</body>
 </html>

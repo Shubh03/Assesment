@@ -14,8 +14,6 @@ else{
 <head>
 
 <title>Car Rental Portal | My Testimonials </title>
-<!-- basic css  -->
-<link rel="stylesheet" href="includes/style.css" type="text/css">
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -87,7 +85,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="uploads/<?php echo htmlentities($result->Vimage1);?>" width="250" height="150" class="user1">
+      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
       </div>
 
       <div class="dealer_info">
@@ -171,4 +169,4 @@ foreach($results as $result)
 
 </body>
 </html>
-<?php } ?> 
+<?php } ?>

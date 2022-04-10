@@ -83,7 +83,7 @@ $error="Something went wrong. Please try again";
 </head>
 <body>
 
-<!-- Start Switcher -->
+<<!-- Start Switcher -->
 <?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->  
         
@@ -163,11 +163,11 @@ foreach($results as $result)
             </li>
             <li>
               <div class="icon_wrap"><i class="fa fa-phone" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="tel:7483825315"><?php   echo htmlentities($result->ContactNo); ?></a></div>
+              <div class="contact_info_m"><a href="tel:61-1234-567-90"><?php   echo htmlentities($result->EmailId); ?></a></div>
             </li>
             <li>
               <div class="icon_wrap"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="mailto:manoharvishwakarma674@gmail.com"><?php   echo htmlentities($result->EmailId); ?></a></div>
+              <div class="contact_info_m"><a href="mailto:contact@exampleurl.com"><?php   echo htmlentities($result->ContactNo); ?></a></div>
             </li>
           </ul>
         <?php }} ?>

@@ -12,8 +12,6 @@ else{
 <head>
 
 <title>Car Rental Portal - My Booking</title>
-<!-- basic css  -->
-<link rel="stylesheet" href="includes/style.css" type="text/css">
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -83,7 +81,7 @@ else{
 
 <?php 
 $useremail=$_SESSION['login'];
-$sql = "SELECT * from tblusers where EmailId=:useremail";
+$sql = "SELECT * from tblusers where EmailId=:useremail ";
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':useremail',$useremail, PDO::PARAM_STR);
 $query->execute();
@@ -96,7 +94,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="uploads/<?php echo htmlentities($result->Vimage1);?>" class="user1" width="250" height="150" >
+      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
       </div>
 
       <div class="dealer_info">
@@ -111,12 +109,12 @@ foreach($results as $result)
    
       <div class="col-md-8 col-sm-8">
         <div class="profile_wrap">
-          <h5 class="uppercase underline">My Bookings </h5>
+          <h5 class="uppercase underline">My Booikngs </h5>
           <div class="my_vehicles_list">
             <ul class="vehicle_listing">
 <?php 
 $useremail=$_SESSION['login'];
- $sql = "SELECT tblvehicles.Vimage1 as Vimage1,tblvehicles.VehiclesTitle,tblvehicles.id as vid,tblbrands.BrandName,tblbooking.FromDate,tblbooking.ToDate, tblbooking.pickuptiming,tblbooking.message,tblbooking.Status,tblvehicles.PricePerDay,DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totaldays,tblbooking.BookingNumber  from tblbooking join tblvehicles on tblbooking.VehicleId=tblvehicles.id join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblbooking.userEmail=:useremail";
+ $sql = "SELECT tblvehicles.Vimage1 as Vimage1,tblvehicles.VehiclesTitle,tblvehicles.id as vid,tblbrands.BrandName,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.Status,tblvehicles.PricePerDay,DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totaldays,tblbooking.BookingNumber  from tblbooking join tblvehicles on tblbooking.VehicleId=tblvehicles.id join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblbooking.userEmail=:useremail order by tblbooking.id desc";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':useremail', $useremail, PDO::PARAM_STR);
 $query->execute();
@@ -134,9 +132,6 @@ foreach($results as $result)
 
                   <h6><a href="vehical-details.php?vhid=<?php echo htmlentities($result->vid);?>"> <?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h6>
                   <p><b>From </b> <?php echo htmlentities($result->FromDate);?> <b>To </b> <?php echo htmlentities($result->ToDate);?></p>
-
-                  <p><b>Pickup Time </b> <?php echo htmlentities($result->pickuptiming);?></p>
-
                   <div style="float: left"><p><b>Message:</b> <?php echo htmlentities($result->message);?> </p></div>
                 </div>
                 <?php if($result->Status==1)
@@ -154,11 +149,8 @@ foreach($results as $result)
 
                 <?php } else { ?>
  <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Not Confirm yet</a>
-<h6> will confirm in 5 min</h6>
             <div class="clearfix"></div>
-            
         </div>
-        
                 <?php } ?>
        
               </li>
@@ -184,23 +176,18 @@ foreach($results as $result)
     <th><?php echo htmlentities($tds*$ppd);?></th>
   </tr>
 </table>
-			
 <hr />
               <?php }}  else { ?>
                 <h5 align="center" style="color:red">No booking yet</h5>
               <?php } ?>
-				
              
          
             </ul>
-            
           </div>
-         
         </div>
       </div>
     </div>
   </div>
-	</div>
 </section>
 <!--/my-vehicles--> 
 <?php include('includes/footer.php');?>
@@ -216,9 +203,6 @@ foreach($results as $result)
 <!--Slider-JS--> 
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/owl.carousel.min.js"></script>
-	<script language="javascript" type="text/javascript">
-
-</script>
 </body>
 </html>
-<?php } ?> 
+<?php } ?>

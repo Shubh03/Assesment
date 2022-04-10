@@ -11,7 +11,6 @@ if(isset($_POST['submit']))
   {
 $testimonoial=$_POST['testimonial'];
 $email=$_SESSION['login'];
-
 $sql="INSERT INTO  tbltestimonial(UserEmail,Testimonial) VALUES(:email,:testimonoial)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':testimonoial',$testimonoial,PDO::PARAM_STR);
@@ -21,7 +20,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Testimonial submitted successfully"
+$msg="Testimonail submitted successfully";
 }
 else 
 {
@@ -35,8 +34,6 @@ $error="Something went wrong. Please try again";
 <head>
 
 <title>Car Rental Portal |Post testimonial</title>
-<!-- basic css  -->
-<link rel="stylesheet" href="includes/style.css" type="text/css">
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -126,7 +123,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="uploads/<?php echo htmlentities($result->Vimage1);?>" width="250" height="150" class="user1">
+      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
       </div>
 
       <div class="dealer_info">
@@ -148,7 +145,7 @@ foreach($results as $result)
           
           
             <div class="form-group">
-              <label class="control-label">Testimonial</label>
+              <label class="control-label">Testimonail</label>
               <textarea class="form-control white_bg" name="testimonial" rows="4" required=""></textarea>
             </div>
           
@@ -199,4 +196,4 @@ foreach($results as $result)
 
 </body>
 </html>
-<?php } ?> 
+<?php } ?>

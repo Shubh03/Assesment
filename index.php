@@ -9,12 +9,12 @@ error_reporting(0);
 <html lang="en">
 <head>
 
-<title>Car Rental Portal </title>
+<title>Car Rental Portal</title>
 <!--Bootstrap -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css?v=<?php echo time(); ?>" type="text/css">
-<link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" type="text/css">
-<link rel="stylesheet" href="assets/css/owl.carousel.css?v=<?php echo time(); ?>" type="text/css">
-<link rel="stylesheet" href="assets/css/owl.transitions.css?v=<?php echo time(); ?>" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+<link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
 <link href="assets/css/slick.css" rel="stylesheet">
 <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -32,10 +32,10 @@ error_reporting(0);
 <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 </head>
-<body >
-<div id="loading"></div>
+<body>
+
 <!-- Start Switcher -->
-<!-- <?php include('includes/colorswitcher.php');?> -->
+<?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->  
         
 <!--Header-->
@@ -44,29 +44,18 @@ error_reporting(0);
 
 <!-- Banners -->
 <section id="banner" class="banner-section">
-
-
-<section class="showcase">
-          <div class="video-container">
-                <video src="video/car (1).mp4" autoplay muted loop></video>
-            </div>
-
-
-
-  <!-- <div class="container">
+  <div class="container">
     <div class="div_zindex">
       <div class="row">
         <div class="col-md-5 col-md-push-7">
           <div class="banner_content">
-          <h1>Find the right car for you.</h1>
-            <p>We have more than a thousand cars for you to choose. </p>
-            <a href="video.php" class="btn">Read More <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
+            <h1>&nbsp;</h1>
+            <p>&nbsp; </p>
             </div>
         </div>
       </div>
     </div>
-  </div> -->
-</section>
+  </div>
 </section>
 <!-- /Banners --> 
 
@@ -74,23 +63,23 @@ error_reporting(0);
 <!-- Resent Cat-->
 <section class="section-padding gray-bg">
   <div class="container">
-    <!-- <div class="section-header text-center">
+    <div class="section-header text-center">
       <h2>Find the Best <span>CarForYou</span></h2>
       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-    </div> -->
-  <div class="row"> 
+    </div>
+    <div class="row"> 
       
       <!-- Nav tabs -->
       <div class="recent-tab">
         <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#resentnewcar" role="tab" data-toggle="tab">New Car</a></li>
+          <li role="presentation" class="active"><a href="#resentnewcar" role="tab" data-toggle="tab">New Car</a></li>
         </ul>
       </div>
       <!-- Recently Listed New Cars -->
       <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="resentnewcar">
+        <div role="tabpanel" class="tab-pane active" id="resentnewcar">
 
-<!-- <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand limit 12";
+<?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand limit 9";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -99,8 +88,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {  
-?>   -->
-
+?>  
 
 <div class="col-list-3">
 <div class="recent-car-list">
@@ -129,12 +117,90 @@ foreach($results as $result)
 <!-- /Resent Cat --> 
 
 <!-- Fun Facts-->
-
+<section class="fun-facts-section">
+  <div class="container div_zindex">
+    <div class="row">
+      <div class="col-lg-3 col-xs-6 col-sm-3">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-calendar" aria-hidden="true"></i>40+</h2>
+            <p>Years In Business</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xs-6 col-sm-3">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-car" aria-hidden="true"></i>1200+</h2>
+            <p>New Cars For Sale</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xs-6 col-sm-3">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
+            <p>Used Cars For Sale</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xs-6 col-sm-3">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i>600+</h2>
+            <p>Satisfied Customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
 <!-- /Fun Facts--> 
 
 
 <!--Testimonial -->
+<section class="section-padding testimonial-section parallex-bg">
+  <div class="container div_zindex">
+    <div class="section-header white-text text-center">
+      <h2>Our Satisfied <span>Customers</span></h2>
+    </div>
+    <div class="row">
+      <div id="testimonial-slider">
+<?php 
+$tid=1;
+$sql = "SELECT tbltestimonial.Testimonial,tblusers.FullName from tbltestimonial join tblusers on tbltestimonial.UserEmail=tblusers.EmailId where tbltestimonial.status=:tid limit 4";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':tid',$tid, PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{  ?>
 
+
+        <div class="testimonial-m">
+ 
+          <div class="testimonial-content">
+            <div class="testimonial-heading">
+              <h5><?php echo htmlentities($result->FullName);?></h5>
+            <p><?php echo htmlentities($result->Testimonial);?></p>
+          </div>
+        </div>
+        </div>
+        <?php }} ?>
+        
+       
+  
+      </div>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
 <!-- /Testimonial--> 
 
 
@@ -170,20 +236,8 @@ foreach($results as $result)
 <!--Slider-JS--> 
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/owl.carousel.min.js"></script>
-<script>
-		$(document).ready(function(){
-				$('div#loading').removeAttr('id');
-		});
-		var preloader = document.getElementById("loading");
-		window.addEventListener('load', function(){
-			preloader.style.display = 'none';
-			})
-
-		function myFunction(){
-			preloader.style.display = 'none';
-		};
-</script>
 
 </body>
 
-</html> 
+<!-- Mirrored from themes.webmasterdriver.net/carforyou/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Jun 2017 07:22:11 GMT -->
+</html>

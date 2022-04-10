@@ -42,7 +42,9 @@ error_reporting(0);
 </head>
 <body>
 
-
+<!-- Start Switcher -->
+<?php include('includes/colorswitcher.php');?>
+<!-- /Switcher -->  
 
 <!--Header--> 
 <?php include('includes/header.php');?>
@@ -53,11 +55,11 @@ error_reporting(0);
   <div class="container">
     <div class="page-header_wrap">
       <div class="page-heading">
-        <h1>Car List</h1>
+        <h1>Car Listing</h1>
       </div>
       <ul class="coustom-breadcrumb">
         <li><a href="#">Home</a></li>
-        <li>Car List</li>
+        <li>Car Listing</li>
       </ul>
     </div>
   </div>
@@ -100,7 +102,7 @@ foreach($results as $result)
           </div>
           <div class="product-listing-content">
             <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h5>
-            <p class="list-price"> $ <?php echo htmlentities($result->PricePerDay);?> Per Day</p>
+            <p class="list-price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
             <ul>
               <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
               <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
@@ -173,7 +175,7 @@ foreach($results as $result)
               <li class="gray-bg">
                 <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
                 <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a>
-                  <p class="widget_price"> $ <?php echo htmlentities($result->PricePerDay);?> Per Day</p>
+                  <p class="widget_price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
                 </div>
               </li>
               <?php }} ?>

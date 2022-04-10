@@ -15,10 +15,7 @@ $dob=$_POST['dob'];
 $adress=$_POST['address'];
 $city=$_POST['city'];
 $country=$_POST['country'];
-// $vimage1=$_FILES["img1"]["name"];
-// move_uploaded_file($_FILES["img1"]["tmp_name"],"uploads/".$_FILES["img1"]["name"]);
 $email=$_SESSION['login'];
-
 $sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,Address=:adress,City=:city,Country=:country where EmailId=:email";
 $query = $dbh->prepare($sql);
 $query->bindParam(':name',$name,PDO::PARAM_STR);
@@ -27,9 +24,7 @@ $query->bindParam(':dob',$dob,PDO::PARAM_STR);
 $query->bindParam(':adress',$adress,PDO::PARAM_STR);
 $query->bindParam(':city',$city,PDO::PARAM_STR);
 $query->bindParam(':country',$country,PDO::PARAM_STR);
-// $query->bindParam(':vimage1',$vimage1,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
-
 $query->execute();
 $msg="Profile Updated Successfully";
 }
@@ -40,10 +35,6 @@ $msg="Profile Updated Successfully";
 <head>
 
 <title>Car Rental Portal | My Profile</title>
-<!-- basic css  -->
-<link rel="stylesheet" href="includes/style.css" type="text/css">
-
-
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -131,33 +122,17 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 { ?>
- <form method="post" class="form-horizontal" enctype="multipart/form-data"> 
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo">  <img src="uploads/<?php echo htmlentities($result->Vimage1);?>" class="user1" width="250" height="250" alt="">
-      
-      
-    </div>
+      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
+      </div>
 
-
-
-   
       <div class="dealer_info">
         <h5><?php echo htmlentities($result->FullName);?></h5>
         <p><?php echo htmlentities($result->Address);?><br>
           <?php echo htmlentities($result->City);?>&nbsp;<?php echo htmlentities($result->Country);?></p>
-          
       </div>
-      
-      <div class="form-group">
-												<label class="col-sm-4 control-label"><span style="color:red"></span></label>
-												<div class="col-sm-8">
-												</div>
-											</div> 
-
-                      <a href="userpic.php?vimage1=<?php echo htmlentities($result->Vimage1)?>">Change Your profile image</a>
-                      
     </div>
   
     <div class="row">
@@ -189,7 +164,7 @@ foreach($results as $result)
             </div>
             <div class="form-group">
               <label class="control-label">Phone Number</label>
-              <input class="form-control white_bg" name="mobilenumber" pattern="\d*" maxlength="10"   value="<?php echo htmlentities($result->ContactNo);?>" id="phone-number"  required>
+              <input class="form-control white_bg" name="mobilenumber" value="<?php echo htmlentities($result->ContactNo);?>" id="phone-number" type="text" required>
             </div>
             <div class="form-group">
               <label class="control-label">Date of Birth&nbsp;(dd/mm/yyyy)</label>
@@ -201,7 +176,7 @@ foreach($results as $result)
             </div>
             <div class="form-group">
               <label class="control-label">Country</label>
-              <input class="form-control white_bg"  id="country" name="country" value="<?php echo htmlentities($result->Country);?>" type="text">
+              <input class="form-control white_bg"  id="country" name="country" value="<?php echo htmlentities($result->City);?>" type="text">
             </div>
             <div class="form-group">
               <label class="control-label">City</label>

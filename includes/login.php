@@ -11,7 +11,7 @@ $query-> execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 //echo "<script>alert('Debug Objects: ". $query  . "' );</script>";
 $userId=$results[0]->id;
-echo "<script>alert('$userId')</script>";
+//echo "<script>alert('$userId')</script>";
 if($query->rowCount() > 0)
 {
 $_SESSION['login']=$_POST['email'];

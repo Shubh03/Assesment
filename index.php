@@ -32,7 +32,7 @@ error_reporting(0);
 <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 </head>
-<body onload="myFunction()">
+<body onload="">
 <!-- <div id="loading"></div> -->
 <!-- Start Switcher -->
 <!-- <?php include('includes/colorswitcher.php');?> -->

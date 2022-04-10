@@ -11,12 +11,12 @@ error_reporting(0);
 
 <title>Car Rental Portal </title>
 <!--Bootstrap -->
-<!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css?v=<?php echo time(); ?>" type="text/css"> -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css?v=<?php echo time(); ?>" type="text/css">
 <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" type="text/css">
 <link rel="stylesheet" href="assets/css/owl.carousel.css?v=<?php echo time(); ?>" type="text/css">
 <link rel="stylesheet" href="assets/css/owl.transitions.css?v=<?php echo time(); ?>" type="text/css">
 <link href="assets/css/slick.css" rel="stylesheet">
-<!-- <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet"> -->
+<link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
@@ -32,14 +32,14 @@ error_reporting(0);
 <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 </head>
-<body onload="">
-<!-- <div id="loading"></div> -->
+<body onload="myFunction()">
+<div id="loading"></div>
 <!-- Start Switcher -->
 <!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
-<!-- <?php include('includes/header.php');?> -->
+<?php include('includes/header.php');?>
 <!-- /Header --> 
 
 <!-- Banners -->

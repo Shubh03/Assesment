@@ -112,7 +112,7 @@ $msg="Vehicle  record deleted successfully";
 											<th>Model Year</th>
 											<th>Action</th>
 										</tr>
-										
+										</tr>
 									</tfoot>
 									<tbody>
 

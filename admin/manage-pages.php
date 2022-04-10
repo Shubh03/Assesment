@@ -241,4 +241,4 @@ echo htmlentities($result->detail);
 </body>
 
 </html>
-<?php } ?> 
+<?php } ?>

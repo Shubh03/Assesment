@@ -180,16 +180,16 @@ foreach($results as $result)
 											
 <div class="hr-dashed"></div>
 <div class="form-group">
-<label class="col-sm-2 control-label">Vehicle Overview<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Vehical Overview<span style="color:red">*</span></label>
 <div class="col-sm-10">
 <textarea class="form-control" name="vehicalorcview" rows="3" required></textarea>
 </div>
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Price Per Day(in $)<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color:red">*</span></label>
 <div class="col-sm-4">
-<input type="number" onkeyup="if(this.value<0){this.value=this.value*-1}" name="priceperday" id="quantity" min="1" max="9999" class="form-control" required>
+<input type="text" name="priceperday" class="form-control" required>
 </div>
 <label class="col-sm-2 control-label">Select Fuel Type<span style="color:red">*</span></label>
 <div class="col-sm-4">
@@ -207,42 +207,11 @@ foreach($results as $result)
 <div class="form-group">
 <label class="col-sm-2 control-label">Model Year<span style="color:red">*</span></label>
 <div class="col-sm-4">
-<!-- <input type="text" onkeyup="if(this.value<0){this.value=this.value*-1}"  name="modelyear" class="form-control" required> -->
-<select class="selectpicker" name="modelyear" required>
-<option value=""> Select </option>
-
-<option value="1995">1995</option>
-<option value="1996">1996</option>
-<option value="1997">1997</option>
-<option value="1998">1998</option>
-<option value="1999">1999</option>
-<option value="2000">2000</option>
-<option value="2001">2001</option>
-<option value="2002">2002</option>
-<option value="2003">2003</option>
-<option value="2004">2004</option>
-<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-<option value="2019">2019</option>
-<option value="2020">2020</option>
-
-</select>
+<input type="text" name="modelyear" class="form-control" required>
 </div>
-<label class="col-sm-2 control-label" for="quantity">Seating Capacity<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Seating Capacity<span style="color:red">*</span></label>
 <div class="col-sm-4">
-<input type="number" onkeyup="if(this.value<0){this.value=this.value*-1}" id="quantity" min="1" max="8" name="seatingcapacity" class="form-control" required>
+<input type="text" name="seatingcapacity" class="form-control" required>
 </div>
 </div>
 <div class="hr-dashed"></div>
@@ -406,4 +375,4 @@ Image 5<input type="file" name="img5">
 	<script src="js/main.js"></script>
 </body>
 </html>
-<?php } ?> 
+<?php } ?>

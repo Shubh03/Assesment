@@ -3,29 +3,19 @@ if(isset($_POST['login']))
 {
 $email=$_POST['email'];
 $password=md5($_POST['password']);
-$sql ="SELECT id,EmailId,Password,FullName FROM tblusers WHERE EmailId=:email and Password=:password";
+$sql ="SELECT EmailId,Password,FullName FROM tblusers WHERE EmailId=:email and Password=:password";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
 $query-> execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-//echo "<script>alert('Debug Objects: ". $query  . "' );</script>";
-$userId=$results[0]->id;
-//echo "<script>alert('$userId')</script>";
 if($query->rowCount() > 0)
 {
 $_SESSION['login']=$_POST['email'];
 $_SESSION['fname']=$results->FullName;
-$_SESSION['userId']=$userId;
-
-
-//echo "<script>alert('Debug Objects: " . $mysql_fetch_array($results) . "' );</script>";
 $currentpage=$_SERVER['REQUEST_URI'];
 echo "<script type='text/javascript'> document.location = '$currentpage'; </script>";
-} 
-
-
-else{
+} else{
   
   echo "<script>alert('Invalid Details');</script>";
 
@@ -48,10 +38,10 @@ else{
             <div class="col-md-12 col-sm-6">
               <form method="post">
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" required="required" placeholder="Email address*">
+                  <input type="email" class="form-control" name="email" placeholder="Email address*">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password" required="required" placeholder="Password*">
+                  <input type="password" class="form-control" name="password" placeholder="Password*">
                 </div>
                 <div class="form-group checkbox">
                   <input type="checkbox" id="remember">
@@ -66,10 +56,10 @@ else{
           </div>
         </div>
       </div>
-      <div class="modal-body text-center">
-        <p>Don't have an account? <a href="#signupform" data-toggle="modal" >Signup Here</a></p>
+      <div class="modal-footer text-center">
+        <p>Don't have an account? <a href="#signupform" data-toggle="modal" data-dismiss="modal">Signup Here</a></p>
         <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal">Forgot Password ?</a></p>
       </div>
     </div>
   </div>
-</div> 
+</div>

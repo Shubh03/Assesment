@@ -19,17 +19,7 @@
         </span> -->
         <div class="header_info">
           
-         <!-- <?php
-         $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-foreach ($results as $result) {
-$email=$result->EmailId;
-$contactno=$result->ContactNo;
-}
-?>    -->
+       
 
             <!-- <div class="header_widgets">
               <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>

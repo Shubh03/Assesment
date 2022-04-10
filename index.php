@@ -33,13 +33,13 @@ error_reporting(0);
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 </head>
 <body onload="myFunction()">
-<!-- <div id="loading"></div> -->
+<div id="loading"></div>
 <!-- Start Switcher -->
 <!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
-<?php include('includes/header.php');?>
+<!-- <?php include('includes/header.php');?> -->
 <!-- /Header --> 
 
 <!-- Banners -->

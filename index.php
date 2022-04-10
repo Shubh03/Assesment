@@ -11,7 +11,7 @@ error_reporting(0);
 
 <title>Car Rental Portal </title>
 <!--Bootstrap -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css?v=<?php echo time(); ?>" type="text/css">
+<!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css?v=<?php echo time(); ?>" type="text/css"> -->
 <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" type="text/css">
 <link rel="stylesheet" href="assets/css/owl.carousel.css?v=<?php echo time(); ?>" type="text/css">
 <link rel="stylesheet" href="assets/css/owl.transitions.css?v=<?php echo time(); ?>" type="text/css">

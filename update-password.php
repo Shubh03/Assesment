@@ -142,8 +142,9 @@ foreach($results as $result)
 { ?>
 <section class="user_profile inner_pages">
   <div class="container">
-    <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
+    <div class="user_profile_info gray-bg padding_1x1_40">
+      <div class="upload_user_logo"> 
+        <!-- <img src="assets/images/dealer-logo.jpg" alt="image"> -->
       </div>
 
       <div class="dealer_info">
@@ -194,7 +195,7 @@ foreach($results as $result)
 <!-- /Footer--> 
 
 <!--Back to top-->
-<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
+<!-- <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div> -->
 <!--/Back to top--> 
 
 <!--Login-Form -->

@@ -93,8 +93,9 @@ foreach($results as $result)
 { ?>
 <section class="user_profile inner_pages">
   <div class="container">
-    <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
+    <div class="user_profile_info gray-bg padding_2x2_40">
+      <div class="upload_user_logo"> 
+        <!-- <img src="assets/images/dealer-logo.jpg" alt="image"> -->
       </div>
 
       <div class="dealer_info">
@@ -148,7 +149,7 @@ foreach($results as $result)
 
 
                 <?php } else { ?>
- <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Not Confirm yet</a>
+ <!-- <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Not Confirm yet</a> -->
             <div class="clearfix"></div>
         </div>
                 <?php } ?>

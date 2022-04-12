@@ -98,7 +98,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
 <!--Listing-Image-Slider-->
 
-<?php 
+<!-- <?php 
 $vhid=intval($_GET['vhid']);
 $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.id=:vhid";
 $query = $dbh -> prepare($sql);
@@ -125,7 +125,7 @@ $_SESSION['brndid']=$result->bid;
   ?>
   <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage5);?>" class="img-responsive" alt="image" width="900" height="560"></div>
   <?php } ?>
-</section>
+</section> -->
 <!--/Listing-Image-Slider-->
 
 
@@ -338,9 +338,9 @@ $_SESSION['brndid']=$result->bid;
       <!--Side-Bar-->
       <aside class="col-md-3">
       
-        <div class="share_vehicle">
+        <!-- <div class="share_vehicle">
           <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
-        </div>
+        </div> -->
         <div class="sidebar_widget">
           <div class="widget_heading">
             <h5><i class="fa fa-envelope" aria-hidden="true"></i>Book Now</h5>
@@ -373,10 +373,10 @@ $_SESSION['brndid']=$result->bid;
     </div>
     
     <div class="space-20"></div>
-    <div class="divider"></div>
+    <!-- <div class="divider"></div> -->
     
     <!--Similar-Cars-->
-    <div class="similar_cars">
+    <!-- <div class="similar_cars">
       <h3>Similar Cars</h3>
       <div class="row">
 <?php 
@@ -411,7 +411,7 @@ foreach($results as $result)
  <?php }} ?>       
 
       </div>
-    </div>
+    </div> -->
     <!--/Similar-Cars--> 
     
   </div>
@@ -423,7 +423,7 @@ foreach($results as $result)
 <!-- /Footer--> 
 
 <!--Back to top-->
-<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
+<!-- <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div> -->
 <!--/Back to top--> 
 
 <!--Login-Form -->

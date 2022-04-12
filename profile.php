@@ -124,8 +124,9 @@ foreach($results as $result)
 { ?>
 <section class="user_profile inner_pages">
   <div class="container">
-    <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/dealer-logo.jpg" alt="image">
+    <div class="user_profile_info gray-bg padding_2x2_40">
+      <div class="upload_user_logo"> 
+        <!-- <img src="assets/images/dealer-logo.jpg" alt="image"> -->
       </div>
 
       <div class="dealer_info">
@@ -140,7 +141,7 @@ foreach($results as $result)
         <?php include('includes/sidebar.php');?>
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
-          <h5 class="uppercase underline">Genral Settings</h5>
+          <h5 class="uppercase underline">General Settings</h5>
           <?php  
          if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
           <form  method="post">
@@ -185,7 +186,9 @@ foreach($results as $result)
             <?php }} ?>
            
             <div class="form-group">
-              <button type="submit" name="updateprofile" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+              <button type="submit" name="updateprofile" class="btn">Save Changes 
+              <!-- <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span> -->
+              </button>
             </div>
           </form>
         </div>
@@ -200,7 +203,7 @@ foreach($results as $result)
 <!-- /Footer--> 
 
 <!--Back to top-->
-<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
+<!-- <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div> -->
 <!--/Back to top--> 
 
 <!--Login-Form -->

@@ -122,7 +122,7 @@ foreach($results as $result)
 
 
 <!--Testimonial -->
-<section class="section-padding testimonial-section parallex-bg">
+<!-- <section class="section-padding testimonial-section parallex-bg"> -->
   <!-- <div class="container div_zindex">
     <div class="section-header white-text text-center">
       <h2>Our Satisfied <span>Customers</span></h2>
@@ -144,11 +144,10 @@ foreach($results as $result)
 
 
         <div class="testimonial-m">
- 
           <div class="testimonial-content">
             <div class="testimonial-heading">
-              <h5><?php echo htmlentities($result->FullName);?></h5>
-            <p><?php echo htmlentities($result->Testimonial);?></p>
+              <!-- <h5><?php echo htmlentities($result->FullName);?></h5> -->
+            <!-- <p><?php echo htmlentities($result->Testimonial);?></p> -->
           </div>
         </div>
         </div>
@@ -160,7 +159,7 @@ foreach($results as $result)
     </div>
   </div>
   <!-- Dark Overlay-->
-  <div class="dark-overlay"></div>
+  <!-- <div class="dark-overlay"></div> -->
 </section>
 <!-- /Testimonial--> 
 

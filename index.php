@@ -9,7 +9,7 @@ error_reporting(0);
 <html lang="en">
 <head>
 
-<title>Car Rental Portal</title>
+<!-- <title>Car Rental Portal</title> -->
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="assets/css/style.css" type="text/css">
